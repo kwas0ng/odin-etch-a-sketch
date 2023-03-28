@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    height: auto;
+   
+}
+
+.gridColumn {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.gridColumn:hover {
+    background-color: black;
+    
+}
+
