@@ -18,7 +18,7 @@ for (let i = 0 ; i < 16; i++){
 
         let column = document.createElement("div");
         
-        rows[j].appendChild(column).className = "gridColumn";
+        rows[j].appendChild(column).className = "cell";
 
     }
 }

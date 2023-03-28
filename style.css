@@ -16,7 +16,7 @@ body {
    
 }
 
-.gridColumn {
+.cell {
     border: 1px solid black;
     width: 20px;
     height: 20px;
@@ -24,7 +24,7 @@ body {
     margin-right: 2px;
 }
 
-.gridColumn:hover {
+.cell:hover {
     background-color: black;
     
 }
