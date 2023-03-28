@@ -2,6 +2,8 @@ const container = document.getElementById("container");
 
 let rows = document.getElementsByClassName("gridRow");
 
+let cells = document.getElementsByClassName("cell");
+
 
 
 
@@ -22,3 +24,20 @@ for (let i = 0 ; i < 16; i++){
 
     }
 }
+
+const elements = document.querySelectorAll("div.cell");
+console.log(elements)
+
+elements.forEach((item) => {
+    item.addEventListener('mousemove', () => {
+        
+        item.setAttribute('style', 'background-color:black');
+    })
+
+    // item.addEventListener('touchend', () => {
+    //     item.setAttribute('style', 'background-color:black');
+    // })
+    
+    
+})
+
