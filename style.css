@@ -4,16 +4,34 @@
     height: 100%;
 }
 
-body {
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
+.toolsContainer {
+    text-align: center;
+}
+
+
 .container {
     height: auto;
-   
+    width: 800px;
+    text-align: center;
+    
+}
+
+.gridRow {
+    /* line-height: 0; */
 }
 
 .cell {
