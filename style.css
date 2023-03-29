@@ -18,26 +18,39 @@
 }
 
 
-.toolsContainer {
+.menu {
+    height: auto;
     text-align: center;
+    flex: 2;
 }
+
+
 
 
 .container {
     height: auto;
-    width: 800px;
-    text-align: center;
+    text-align: start;
+    flex: 3;
     
 }
 
+.sketchArea {
+    height: fit-content;
+    width: 500px;
+}
+
+
+
 .gridRow {
     /* line-height: 0; */
+    height: auto;
+    width: auto;
 }
 
 .cell {
     border: 1px solid black;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     margin-right: 2px;
 }
