@@ -14,10 +14,6 @@ slider.oninput = function () {
     sliderValue.innerHTML = this.value + " x " + this.value;
 }
 
-
-
-
-
 defaultGrid();
 
 function defaultGrid () {
@@ -31,18 +27,16 @@ function defaultGrid () {
 
 slider.addEventListener('change', (e) => {
     sketchArea.innerHTML = "";
+    
     makeGrid(slider.value);
     
 } )
 
-
-function resetGrid () {
-
-}
-
 function makeGrid (size) {
+    sketchArea.setAttribute('style', 'grid-template: repeat(' + size + ', 1fr)' + '/' + 'repeat(' + size + ', 1fr)' );
     makeRows(size);
     makeColumns(size);
+    
     draw();
 }
 
@@ -120,7 +114,6 @@ function draw () {
 
 
     })
-
 
     // if the mouse cursor leaves the sketch area, drawing will be set to false
     sketchArea.addEventListener('mouseleave', (e) => {

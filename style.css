@@ -25,35 +25,37 @@
 }
 
 
-
-
 .container {
     height: auto;
     text-align: start;
     flex: 3;
-    
 }
 
 .sketchArea {
-    height: fit-content;
+    display: grid;
+    height: 500px;
     width: 500px;
+    box-shadow: 3px 3px 3px 3px gray;
+
+    grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+
+    /* grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); */
 }
 
 
 
 .gridRow {
     /* line-height: 0; */
-    height: auto;
+    /* height: auto;
     width: auto;
+    border: 1px solid black; */
 }
 
-.cell {
-    border: 1px solid black;
-    width: 16px;
-    height: 16px;
+/* .cell {
     display: inline-block;
-    margin-right: 2px;
-}
+
+} */
 
 /* .cell:hover {
     background-color: black;
