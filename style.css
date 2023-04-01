@@ -24,6 +24,10 @@
     flex: 2;
 }
 
+.slider{
+    width:  200px;
+}
+
 
 .container {
     height: auto;
@@ -43,22 +47,16 @@
     grid-template-rows: repeat(16, 1fr); */
 }
 
-
-
-.gridRow {
-    /* line-height: 0; */
-    /* height: auto;
-    width: auto;
-    border: 1px solid black; */
+.clearButton {
+    margin-top: 30px;
+    padding: 20px;
+    width: 200px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 5px;
 }
 
-/* .cell {
-    display: inline-block;
 
-} */
 
-/* .cell:hover {
-    background-color: black;
-    
-} */
+
 

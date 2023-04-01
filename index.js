@@ -6,37 +6,72 @@ let cells = document.getElementsByClassName("cell");
 
 const slider = document.getElementById('slider');
 
-var sliderValue = document.getElementById('sliderValue');
+const clearButton = document.getElementById('clearButton');
 
-sliderValue.innerHTML = slider.value + " x " + slider.value;
 
-slider.oninput = function () {
-    sliderValue.innerHTML = this.value + " x " + this.value;
-}
+
+
+
+
+
+// Initialize the default grid which is 16x16
+
 
 defaultGrid();
+initializeSlider();
+
+
+
+
+
+// Function for clearing the sketch area PS. (Kinda similar to the slider event listener)
+
+clearButton.addEventListener('click', () => {
+    sketchArea.innerHTML = "";
+    makeGrid(slider.value);
+})
+
+
+
+
+
+
+
+
+
+
+// Declaration for the value of the slider
+
+function initializeSlider () {
+
+    var sliderValue = document.getElementById('sliderValue');
+
+    sliderValue.innerHTML = slider.value + " x " + slider.value;
+
+    slider.oninput = function () {
+        sliderValue.innerHTML = this.value + " x " + this.value;
+    }
+
+    // Listener when value of the slider is changed
+
+    slider.addEventListener('change', (e) => {
+        sketchArea.innerHTML = "";
+        makeGrid(slider.value);
+    } )
+
+}
+
+
 
 function defaultGrid () {
     makeGrid(16);
 }
 
-/*
-
-    Make it so that the size of the grid can be dynamic
-*/
-
-slider.addEventListener('change', (e) => {
-    sketchArea.innerHTML = "";
-    
-    makeGrid(slider.value);
-    
-} )
 
 function makeGrid (size) {
     sketchArea.setAttribute('style', 'grid-template: repeat(' + size + ', 1fr)' + '/' + 'repeat(' + size + ', 1fr)' );
     makeRows(size);
     makeColumns(size);
-    
     draw();
 }
 
@@ -68,8 +103,6 @@ function makeColumns (columns) {
 function draw () {
 
     let isDrawing = false;
-
-
 
     const squares = document.querySelectorAll("div.cell");
     console.log(squares)
