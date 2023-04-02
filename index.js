@@ -7,6 +7,8 @@ let cells = document.getElementsByClassName("cell");
 const slider = document.getElementById('slider');
 
 const clearButton = document.getElementById('clearButton');
+const eraserButton = document.getElementById('eraserButton');
+
 
 
 
@@ -30,6 +32,10 @@ clearButton.addEventListener('click', () => {
     sketchArea.innerHTML = "";
     makeGrid(slider.value);
 })
+
+
+
+
 
 
 
@@ -103,7 +109,11 @@ function makeColumns (columns) {
 function draw () {
 
     let isDrawing = false;
+    let isErasing = false;
 
+    
+
+  
     const squares = document.querySelectorAll("div.cell");
     console.log(squares)
 

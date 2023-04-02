@@ -26,6 +26,7 @@
 
 .slider{
     width:  200px;
+    margin-bottom: 30px;
 }
 
 
@@ -47,14 +48,25 @@
     grid-template-rows: repeat(16, 1fr); */
 }
 
-.clearButton {
-    margin-top: 30px;
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 200px;
+    gap: 30px;
+    justify-content: center;
+    
+}
+
+.clearButton, .eraserButton {
     padding: 20px;
     width: 200px;
     background: transparent;
     border: 1px solid;
     border-radius: 5px;
 }
+
+
 
 
 
