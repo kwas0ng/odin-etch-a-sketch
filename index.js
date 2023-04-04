@@ -136,7 +136,7 @@ function initializeSketchArea () {
             isDrawing = false;
          })
 
-        square.addEventListener('mousemove', (e) => {
+        square.addEventListener('mouseover', (e) => {
 
             if (isDrawing) {
 
