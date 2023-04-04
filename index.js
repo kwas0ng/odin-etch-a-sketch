@@ -31,9 +31,13 @@ let isRainbow = false;
 
 
 // Sets the default selected button
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState !== 'loading'){
     drawButton.click();
-})
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        drawButton.click();
+    })
+}
 
 
 
