@@ -34,6 +34,7 @@
     height: auto;
     text-align: start;
     flex: 3;
+    
 }
 
 .sketchArea {
@@ -43,9 +44,6 @@
     box-shadow: 3px 3px 3px 3px gray;
 
     grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-
-    /* grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr); */
 }
 
 .buttonWrapper {
@@ -86,6 +84,14 @@
     width: 100px;
     height: 100px;
     opacity: 0;
+}
+
+.title {
+    position: absolute;
+    top: 50px;
+    font-weight: bold;
+    font-size: 42px;
+    
 }
 
 

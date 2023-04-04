@@ -9,6 +9,7 @@ const slider = document.getElementById('slider');
 const clearButton = document.getElementById('clearButton');
 const eraserButton = document.getElementById('eraserButton');
 const drawButton = document.getElementById('drawButton');
+const rainbowButton = document.getElementById('rainbowButton');
 
 const buttons = document.querySelectorAll('button:not(.clearButton)');
 
@@ -26,6 +27,7 @@ colorPicker.addEventListener('input', () => {
 
 let isDrawing = false;
 let isErasing = false;
+let isRainbow = false;
 
 
 // Sets the default selected button
@@ -77,14 +79,25 @@ clearButton.addEventListener('click', () => {
 
 eraserButton.addEventListener('click', () => {
     isErasing = true;
+    isRainbow = false;
 })
 
 drawButton.addEventListener('click', () => {
-    
+    isErasing = false;
+    isRainbow = false;
+})
+
+rainbowButton.addEventListener('click', () => {
+    isRainbow = true;
     isErasing = false;
 })
 
 
+function generateRandomRGB() {
+
+    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+
+}
 
 function initializeSketchArea () {
 
@@ -110,6 +123,8 @@ function initializeSketchArea () {
 
             if(isErasing) {
                 square.setAttribute('style', 'background-color:white');
+            }else if(isRainbow) {
+                square.setAttribute('style', 'background-color:' + generateRandomRGB());
             }else {
                 square.setAttribute('style', 'background-color:' + colorPicker.value);
             }
@@ -119,7 +134,6 @@ function initializeSketchArea () {
 
         square.addEventListener('mouseup', (e) => { 
             isDrawing = false;
-
          })
 
         square.addEventListener('mousemove', (e) => {
@@ -128,6 +142,8 @@ function initializeSketchArea () {
 
                 if(isErasing) {
                     square.setAttribute('style', 'background-color:white');
+                }else if(isRainbow) {
+                    square.setAttribute('style', 'background-color:' + generateRandomRGB());
                 }else {
                     square.setAttribute('style', 'background-color:' + colorPicker.value);
                 }
