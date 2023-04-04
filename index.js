@@ -33,15 +33,14 @@ let isRainbow = false;
 
 
 
+// sets the draw button as the default highlighted button
+let prevButton = drawButton;
 
-let prevButton = null
 
 buttons.forEach( (button) => {
 
     button.addEventListener('click', (e) => {
 
-        
-        
         button.classList.add('active');
 
 
@@ -60,14 +59,7 @@ buttons.forEach( (button) => {
     
 }) 
 
-// Sets the default selected button
-if (document.readyState !== 'loading'){
-    drawButton.click();
-} else {
-    document.addEventListener('DOMContentLoaded', () => {
-        drawButton.click();
-    })
-}
+
 
 
 
