@@ -12,6 +12,15 @@ const drawButton = document.getElementById('drawButton');
 
 const buttons = document.querySelectorAll('button:not(.clearButton)');
 
+const colorPickerContainer = document.getElementById('colorPickerContainer');
+const colorPicker = document.getElementById('colorPicker');
+
+
+
+
+colorPicker.addEventListener('input', () => {
+    colorPickerContainer.setAttribute('style', 'background-color: ' + colorPicker.value);
+})
 
 
 
@@ -40,7 +49,6 @@ buttons.forEach( (button) => {
             prevButton.classList.remove('active');
         }
 
-        
         prevButton = e.target;
 
         if(e.target === prevButton) {
@@ -72,7 +80,8 @@ eraserButton.addEventListener('click', () => {
 })
 
 drawButton.addEventListener('click', () => {
-    initializeSketchArea();
+    
+    isErasing = false;
 })
 
 
@@ -102,7 +111,7 @@ function initializeSketchArea () {
             if(isErasing) {
                 square.setAttribute('style', 'background-color:white');
             }else {
-                square.setAttribute('style', 'background-color:black');
+                square.setAttribute('style', 'background-color:' + colorPicker.value);
             }
            
     
@@ -120,12 +129,15 @@ function initializeSketchArea () {
                 if(isErasing) {
                     square.setAttribute('style', 'background-color:white');
                 }else {
-                    square.setAttribute('style', 'background-color:black');
+                    square.setAttribute('style', 'background-color:' + colorPicker.value);
                 }
                 
             }
+        })
 
-
+        //if the mouse cursor leaves the sketch area, drawing will be set to false
+        sketchArea.addEventListener('mouseleave', (e) => {
+            isDrawing = false;
         })
 
     })
